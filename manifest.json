@@ -1,7 +1,7 @@
 {
-    "name": "Soluna Development",
+    "name": "Soluna Script Hub",
     "short_name": "Soluna",
-    "description": "A showcase of scripts by Soluna Development.",
+    "description": "Soluna Script Hub — Roblox scripts, utilities, and tools developed by Soluna Development.",
     "start_url": "/",
     "scope": "/",
     "display": "standalone",
