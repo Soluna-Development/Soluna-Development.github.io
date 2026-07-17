@@ -171,17 +171,14 @@ document.addEventListener('DOMContentLoaded', () => {
         trackEl.innerHTML = '';
         if (!reviews.length) return;
 
-        reviews.forEach((t) => trackEl.appendChild(buildTestimonialCard(t)));
+        const minSetsForCoverage = Math.max(1, Math.ceil((window.innerWidth * 3) / (reviews.length * 260)));
 
-        const targetWidth = window.innerWidth * 3;
-        let safety = 0;
-        while (trackEl.scrollWidth < targetWidth && safety < 30) {
+        for (let i = 0; i < minSetsForCoverage; i++) {
             reviews.forEach((t) => trackEl.appendChild(buildTestimonialCard(t)));
-            safety += 1;
         }
 
-        const currentCards = Array.from(trackEl.children).map((c) => c.cloneNode(true));
-        currentCards.forEach((c) => trackEl.appendChild(c));
+        const firstHalf = Array.from(trackEl.children).map((c) => c.cloneNode(true));
+        firstHalf.forEach((c) => trackEl.appendChild(c));
     }
 
     async function loadTestimonials() {
