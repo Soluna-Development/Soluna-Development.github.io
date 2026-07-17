@@ -93,7 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
         card.addEventListener('click', async () => {
-            const link = script.links?.[0]?.href || '';
+            const rawLink = script.links?.[0]?.href || '';
+            const link = `loadstring(game:HttpGet("${rawLink}"))()`;
+
             try {
                 await navigator.clipboard.writeText(link);
             } catch (error) {
