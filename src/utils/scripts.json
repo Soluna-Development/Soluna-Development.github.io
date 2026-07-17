@@ -1,0 +1,134 @@
+[
+    {
+        "image": "https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/assets/static/background-with-logo.png",
+        "alt": "Soluna Script Loader Screenshot",
+        "title": "Soluna Script Loader",
+        "description": "A Roblox script loader supporting multiple games with a clean Fluent UI interface, persistent settings, auto-load functionality, teleport loading, theme customization, and centralized script management.",
+        "links": [
+            {
+                "href": "https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/Loader.lua"
+            }
+        ]
+    },
+    {
+        "image": "https://tr.rbxcdn.com/180DAY-15eb19b4816654a3270689171a3dbdef/768/432/Image/Webp/noFilter",
+        "alt": "Rivals Classic Script Screenshot",
+        "title": "Rivals Classic",
+        "description": "The original Rivals script version supported by Soluna with persistent settings and loader integration.",
+        "links": [
+            {
+                "href": "https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/Loader.lua"
+            }
+        ]
+    },
+    {
+        "image": "https://tr.rbxcdn.com/180DAY-27507ba164fae9b46c68047d34d0078b/768/432/Image/Webp/noFilter",
+        "alt": "Rivals Modern Script Screenshot",
+        "title": "Rivals Modern",
+        "description": "The modern Rivals script version featuring updated functionality and compatibility through the Soluna loader.",
+        "links": [
+            {
+                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/Rivals/Modern.lua"
+            }
+        ]
+    },
+    {
+        "image": "https://tr.rbxcdn.com/180DAY-4ca6e066ef51f10829f653ca849f350d/768/432/Image/Webp/noFilter",
+        "alt": "Rivals Rewrite Script Screenshot",
+        "title": "Rivals Rewrite",
+        "description": "A rewritten version of the Rivals script built with updated structure and improvements.",
+        "links": [
+            {
+                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/Rivals/Rewrite.lua"
+            }
+        ]
+    },
+    {
+        "image": "https://tr.rbxcdn.com/180DAY-c66296c3f8c6e16eb6f6eecca67c4710/768/432/Image/Webp/noFilter",
+        "alt": "Rivals Skin Changer Script Screenshot",
+        "title": "Rivals Skin Changer",
+        "description": "A Rivals skin customization script integrated into the Soluna loader.",
+        "links": [
+            {
+                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/Rivals/Skin-Changer.lua"
+            }
+        ]
+    },
+    {
+        "image": "https://tr.rbxcdn.com/180DAY-fd5d29ef7df403915891862d02ae09bb/768/432/Image/Webp/noFilter",
+        "alt": "Arsenal Script Screenshot",
+        "title": "Arsenal",
+        "description": "A dedicated Arsenal script integrated into the Soluna loader with automatic loading support and saved configuration settings.",
+        "links": [
+            {
+                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/Arsenal.lua"
+            }
+        ]
+    },
+    {
+        "image": "https://tr.rbxcdn.com/180DAY-aa0679c96e6ce33f961087cebcc07ce6/768/432/Image/Webp/noFilter",
+        "alt": "Blade Ball Script Screenshot",
+        "title": "Blade Ball",
+        "description": "A Blade Ball script available through the Soluna loader with toggle-based script selection and persistent settings.",
+        "links": [
+            {
+                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/Bladeball.lua"
+            }
+        ]
+    },
+    {
+        "image": "https://tr.rbxcdn.com/180DAY-fe7335c3ad752e84323cd81ae38de69a/768/432/Image/Webp/noFilter",
+        "alt": "Murder Mystery 2 Script Screenshot",
+        "title": "Murder Mystery 2",
+        "description": "A Murder Mystery 2 script integrated into Soluna's multi-game loader system.",
+        "links": [
+            {
+                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/Murder-Mystery-2.lua"
+            }
+        ]
+    },
+    {
+        "image": "https://tr.rbxcdn.com/180DAY-643b9b9285f3bd9b63cf392db12a4d87/768/432/Image/Webp/noFilter",
+        "alt": "99 Nights in the Forest Script Screenshot",
+        "title": "99 Nights in the Forest",
+        "description": "A miscellaneous game script supported by the Soluna loader with auto-load and manual loading options.",
+        "links": [
+            {
+                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/99-Nights-in-the-Forest.lua"
+            }
+        ]
+    },
+    {
+        "image": "https://tr.rbxcdn.com/180DAY-9fb820a5978cb6a5125861c3f0cbe131/768/432/Image/Webp/noFilter",
+        "alt": "The Wild West Script Screenshot",
+        "title": "The Wild West",
+        "description": "A supported Soluna script for The Wild West with persistent loader integration.",
+        "links": [
+            {
+                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/The-Wild-West.lua"
+            }
+        ]
+    },
+    {
+        "image": "https://tr.rbxcdn.com/180DAY-09f0d9b97f35839568ec129016b18485/768/432/Image/Webp/noFilter",
+        "alt": "Doors Script Screenshot",
+        "title": "Doors",
+        "description": "A Doors script available through the Soluna loader's miscellaneous game category.",
+        "links": [
+            {
+                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/Doors.lua"
+            }
+        ]
+    },
+    {
+        "image": "https://tr.rbxcdn.com/180DAY-20254f91c5043de87f6cc8adb218c624/768/432/Image/Webp/noFilter",
+        "alt": "Fling Things and People Script Screenshot",
+        "title": "Fling Things and People",
+        "description": "A fighting category script supported by the Soluna loader.",
+        "links": [
+            {
+                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/Fling-Things-and-People.lua"
+            }
+        ]
+    }
+]

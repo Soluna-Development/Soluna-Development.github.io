@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Soluna Development</title>
+    <meta name="description" content="Portfolio of Soluna Development scripts.">
+    <link rel="icon"
+        href="https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/assets/branding/light-on-black.png"
+        type="image/png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Soluna Development">
+    <link rel="apple-touch-icon"
+        href="https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/assets/branding/light-on-black.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/index.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <span class="logo">Soluna Development</span>
+            <div class="nav-links">
+                <a href="#scripts">Scripts</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#faq">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <svg aria-hidden="true" class="dot-grid" width="100%" height="100%">
+        <defs>
+            <pattern id="dot-pattern" width="20" height="20" patternUnits="userSpaceOnUse"
+                patternContentUnits="userSpaceOnUse" x="0" y="0">
+                <circle cx="1" cy="1" r="1"></circle>
+            </pattern>
+        </defs>
+        <rect width="100%" height="100%" stroke-width="0" fill="url(#dot-pattern)"></rect>
+    </svg>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-container">
+                <a href="#scripts" class="hero-pill">
+                    <span class="hero-pill-icon">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                            <path d="M3 6h18M16 10a4 4 0 0 1-8 0" />
+                        </svg>
+                    </span>
+                    View Scripts
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+
+                <h1 class="hero-title">...</h1>
+                <p class="hero-desc">Title created using <a href="https://github.com/vexa-intelligence" class="bold"
+                        target="_blank">Vexa AI</a></p>
+
+                <button class="discord-copy-bar" id="copy-discord-btn" type="button">
+                    <span
+                        class="copy-discord-label">loadstring(game:HttpGet("https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/Loader.lua"))()</span>
+                    <span class="discord-copy-actions">
+                        <span class="discord-copy-icon" id="copy-discord-icon">
+                            <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" />
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                            </svg>
+                            <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg>
+                        </span>
+                        <span class="discord-copy-icon discord-copy-icon-brand">
+                            <svg width="16" height="16" viewBox="0 0 127.14 96.36" fill="currentColor">
+                                <path
+                                    d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" />
+                            </svg>
+                        </span>
+                    </span>
+                </button>
+
+                <p class="social-proof">Used by over <span id="user-count">100,000+</span> people</p>
+            </div>
+        </section>
+
+        <section id="scripts" class="section">
+            <div class="container">
+                <h2 class="section-title">Our Scripts</h2>
+                <div class="scripts-wrap">
+                    <div class="scripts-grid" id="scripts-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section testimonials-section">
+            <div class="container testimonials-container">
+                <div class="testimonials-heading">
+                    <h2 class="section-title-lg">Here's what people say about <span class="bold">us</span>
+                </div>
+                <div class="marquee-wrap">
+                    <div class="marquee-row marquee-left">
+                        <div class="marquee-track" id="marquee-track-1"></div>
+                    </div>
+                    <div class="marquee-row marquee-right">
+                        <div class="marquee-track" id="marquee-track-2"></div>
+                    </div>
+                </div>
+        </section>
+
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <div class="faq-heading">
+                    <h2 class="section-title-lg">FAQ</h2>
+                    <p class="faq-sub">Still have questions? <a href="https://discord.gg/e52GujVvbN" target="_blank">Ask
+                            in our Discord</a></p>
+                </div>
+                <div class="faq-list" id="faq-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand-block">
+                <img src="https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/assets/branding/light-on-black.png"
+                    alt="" class="footer-logo">
+                <div class="footer-brand-text">
+                    <span class="footer-brand">Soluna Development</span>
+                    <span class="footer-tagline">Site made by Soluna Development</span>
+                </div>
+            </div>
+            <span class="footer-disclaimer">This software is not affiliated, associated, authorized, endorsed by, or in
+                any way officially connected with Roblox or Microsoft or any of its subsidiaries or its
+                affiliates.</span>
+        </div>
+    </footer>
+
+    <script src="src/index.js"></script>
+</body>
+
+</html>
