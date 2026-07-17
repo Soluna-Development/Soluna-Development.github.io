@@ -17,7 +17,7 @@
         "description": "The original Rivals script version supported by Soluna with persistent settings and loader integration.",
         "links": [
             {
-                "href": "https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/Loader.lua"
+                "href": "https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/scripts/Rivals/Classic.lua"
             }
         ]
     },
@@ -28,7 +28,7 @@
         "description": "The modern Rivals script version featuring updated functionality and compatibility through the Soluna loader.",
         "links": [
             {
-                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/Rivals/Modern.lua"
+                "href": "https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/scripts/Rivals/Modern.lua"
             }
         ]
     },
@@ -39,7 +39,7 @@
         "description": "A rewritten version of the Rivals script built with updated structure and improvements.",
         "links": [
             {
-                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/Rivals/Rewrite.lua"
+                "href": "https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/scripts/Rivals/Rewrite.lua"
             }
         ]
     },
@@ -50,7 +50,7 @@
         "description": "A Rivals skin customization script integrated into the Soluna loader.",
         "links": [
             {
-                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/Rivals/Skin-Changer.lua"
+                "href": "https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/scripts/Rivals/Skin-Changer.lua"
             }
         ]
     },
@@ -61,7 +61,7 @@
         "description": "A dedicated Arsenal script integrated into the Soluna loader with automatic loading support and saved configuration settings.",
         "links": [
             {
-                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/Arsenal.lua"
+                "href": "https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/scripts/Arsenal.lua"
             }
         ]
     },
@@ -72,7 +72,7 @@
         "description": "A Blade Ball script available through the Soluna loader with toggle-based script selection and persistent settings.",
         "links": [
             {
-                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/Bladeball.lua"
+                "href": "https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/scripts/Bladeball.lua"
             }
         ]
     },
@@ -83,7 +83,7 @@
         "description": "A Murder Mystery 2 script integrated into Soluna's multi-game loader system.",
         "links": [
             {
-                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/Murder-Mystery-2.lua"
+                "href": "https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/scripts/Murder-Mystery-2.lua"
             }
         ]
     },
@@ -94,7 +94,7 @@
         "description": "A miscellaneous game script supported by the Soluna loader with auto-load and manual loading options.",
         "links": [
             {
-                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/99-Nights-in-the-Forest.lua"
+                "href": "https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/scripts/99-Nights-in-the-Forest.lua"
             }
         ]
     },
@@ -105,7 +105,7 @@
         "description": "A supported Soluna script for The Wild West with persistent loader integration.",
         "links": [
             {
-                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/The-Wild-West.lua"
+                "href": "https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/scripts/The-Wild-West.lua"
             }
         ]
     },
@@ -116,7 +116,7 @@
         "description": "A Doors script available through the Soluna loader's miscellaneous game category.",
         "links": [
             {
-                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/Doors.lua"
+                "href": "https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/scripts/Doors.lua"
             }
         ]
     },
@@ -127,7 +127,7 @@
         "description": "A fighting category script supported by the Soluna loader.",
         "links": [
             {
-                "href": "https://github.com/Soluna-Development/API/blob/main/src/scripts/Fling-Things-and-People.lua"
+                "href": "https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/scripts/Fling-Things-and-People.lua"
             }
         ]
     }
