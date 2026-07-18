@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
     <title>Soluna Script Hub</title>
-    <meta name="description" content="Soluna Script Hub — Roblox scripts, game utilities, and tools developed by Soluna Development.">
+    <meta name="description"
+        content="Soluna Script Hub — Roblox scripts, game utilities, and tools developed by Soluna Development.">
 
     <meta property="og:title" content="Soluna Script Hub">
     <meta property="og:description" content="Roblox scripts, utilities, and tools developed by Soluna Development.">
@@ -66,13 +67,23 @@
 
     <main>
         <section class="hero">
+            <div class="hero-atmosphere" aria-hidden="true">
+                <video class="hero-atmosphere-video" autoplay loop muted playsinline preload="auto">
+                    <source src="https://www.pexels.com/download/video/38458547/" type="video/mp4">
+                </video>
+                <div class="hero-atmosphere-sheen"></div>
+                <canvas id="hero-byte-overlay"></canvas>
+                <div class="hero-atmosphere-vignette"></div>
+            </div>
             <div class="container hero-container">
                 <a href="#scripts" class="hero-pill">
                     <span class="hero-pill-icon">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-                            <path d="M3 6h18M16 10a4 4 0 0 1-8 0" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-shopping-bag mr-2" aria-hidden="true">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                            <path d="M3 6h18"></path>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
                         </svg>
                     </span>
                     View Scripts
@@ -82,10 +93,7 @@
                 </a>
 
                 <h1 class="hero-title">...</h1>
-                <p class="hero-desc">Title created using <a href="https://github.com/vexa-intelligence" class="bold"
-                        target="_blank">Vexa AI</a></p>
-
-                <button class="discord-copy-bar" id="copy-discord-btn" type="button">
+                <button class="discord-copy-bar reveal" id="copy-discord-btn" type="button">
                     <span
                         class="copy-discord-label">loadstring(game:HttpGet("https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/Loader.lua"))()</span>
                     <span class="discord-copy-actions">
@@ -100,32 +108,77 @@
                                 <path d="M20 6 9 17l-5-5" />
                             </svg>
                         </span>
-                        <span class="discord-copy-icon discord-copy-icon-brand">
-                            <svg width="16" height="16" viewBox="0 0 127.14 96.36" fill="currentColor">
-                                <path
-                                    d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" />
-                            </svg>
-                        </span>
                     </span>
                 </button>
 
-                <p class="social-proof">Used by over <span id="user-count">100,000+</span> people</p>
+                <div class="hero-cta-row reveal">
+                    <button class="hero-cta hero-cta-dark" id="hero-copy-script-btn" type="button">Copy Script</button>
+                    <a class="hero-cta hero-cta-light" href="https://discord.gg/e52GujVvbN" target="_blank"
+                        rel="noopener noreferrer">Join Discord</a>
+                </div>
+
+                <p class="hero-tos">Using Soluna means you agree to our <a href="#faq">Terms</a>. We are not liable for
+                    any bans, losses, or issues resulting from third-party script usage — use at your own risk.</p>
+
+                <div class="partners-inline reveal" id="partners-grid-wrap">
+                    <p class="partners-label">Available from verified reseller partners</p>
+                    <div class="partners-grid" id="partners-grid"></div>
+                </div>
             </div>
         </section>
 
+        <div class="stats-grid reveal-stagger" id="stats-grid">
+            <div class="stat-item reveal">
+                <span class="stat-value" id="stat-members">–</span>
+                <span class="stat-label">Discord Members</span>
+            </div>
+            <div class="stat-item reveal">
+                <span class="stat-value" id="stat-online">–</span>
+                <span class="stat-label">Online Now</span>
+            </div>
+            <div class="stat-item reveal">
+                <span class="stat-value" id="stat-scripts">–</span>
+                <span class="stat-label">Scripts Available</span>
+            </div>
+        </div>
+
         <section id="scripts" class="section">
             <div class="container">
-                <h2 class="section-title">Our Scripts</h2>
+                <h2 class="section-title reveal">Our Scripts</h2>
                 <div class="scripts-wrap">
-                    <div class="scripts-grid" id="scripts-grid"></div>
+                    <div class="scripts-grid reveal-stagger" id="scripts-grid"></div>
                 </div>
+            </div>
+        </section>
+
+        <section id="executors" class="section executors-section">
+            <div class="container executors-container">
+                <div class="executors-heading reveal">
+                    <h2 class="section-title-lg">Supporting your favorite executors</h2>
+                    <p class="faq-sub">accessibility done right</p>
+                </div>
+            </div>
+            <div class="executors-marquee-wrap">
+                <div class="executors-marquee-row">
+                    <div class="executors-marquee-track" id="executors-track"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="showcases" class="showcases-section">
+            <div class="container showcases-heading reveal">
+                <h2 class="section-title-lg">Community showcases.</h2>
+                <p class="faq-sub">See what creators are doing with Soluna, straight from YouTube.</p>
+            </div>
+            <div class="showcase-viewport">
+                <div class="showcase-track" id="showcase-track"></div>
             </div>
         </section>
 
         <section id="testimonials" class="section testimonials-section">
             <div class="container testimonials-container">
-                <div class="testimonials-heading">
-                    <h2 class="section-title-lg">Here's what people say about <span class="bold">us</span>
+                <div class="testimonials-heading reveal">
+                    <h2 class="section-title-lg">Here's what people say about <span class="bold">Soluna</span>
                 </div>
                 <div class="marquee-wrap">
                     <div class="marquee-row marquee-left">
@@ -139,12 +192,12 @@
 
         <section id="faq" class="section faq-section">
             <div class="container">
-                <div class="faq-heading">
+                <div class="faq-heading reveal">
                     <h2 class="section-title-lg">FAQ</h2>
                     <p class="faq-sub">Still have questions? <a href="https://discord.gg/e52GujVvbN" target="_blank">Ask
                             in our Discord</a></p>
                 </div>
-                <div class="faq-list" id="faq-list"></div>
+                <div class="faq-list reveal-stagger" id="faq-list"></div>
             </div>
         </section>
     </main>
@@ -157,6 +210,8 @@
                 <div class="footer-brand-text">
                     <span class="footer-brand">Soluna Development</span>
                     <span class="footer-tagline">Site made by Soluna Development</span>
+                    <span class="footer-sub-tagline">UI design is entirely from: <a href="https://www.mspaint.cc/"
+                            target="_blank">mspaint.cc</a> ❤️</span>
                 </div>
             </div>
             <span class="footer-disclaimer">This software is not affiliated, associated, authorized, endorsed by, or in
