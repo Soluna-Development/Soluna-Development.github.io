@@ -6,8 +6,8 @@
     "scope": "/",
     "display": "standalone",
     "display_override": ["window-controls-overlay", "standalone"],
-    "background_color": "#000000",
-    "theme_color": "#000000",
+    "background_color": "transparent",
+    "theme_color": "transparent",
     "orientation": "any",
     "icons": [
         {
