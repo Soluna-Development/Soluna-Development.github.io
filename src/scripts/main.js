@@ -7,6 +7,7 @@ import { initExecutorsSection } from './sections/executors.js';
 import { initShowcasesSection } from './sections/showcases.js';
 import { initPartnersSection } from './sections/partners.js';
 import { initFaqSection } from './sections/faq.js';
+import { getExecutors } from './services/executors-service.js';
 
 function initApp() {
     observeReveals();
@@ -19,6 +20,18 @@ function initApp() {
     initShowcasesSection();
     initPartnersSection();
     initFaqSection();
+
+    window.debugExecutors = async () => {
+        console.log('[DEBUG] Manually refetching executors...');
+        try {
+            const executors = await getExecutors();
+            console.log('[DEBUG] Success! Executors:', executors);
+            return executors;
+        } catch (error) {
+            console.error('[DEBUG] Failed:', error);
+            throw error;
+        }
+    };
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
