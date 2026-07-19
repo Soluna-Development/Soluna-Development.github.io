@@ -1,22 +1,20 @@
 import { prefersReducedMotion } from '../utils/dom.js';
 import { smoothstep, diffuse, project, advect } from './fluid-solver.js';
 
-const CELL_SIZE = 20;
-const FONT_SIZE = 12;
+const CELL_SIZE = 24;
+const FONT_SIZE = 11;
 const DT = 1 / 30;
 const FADE_RATE = 0.6;
-const MAX_ALPHA = 0.5;
+const MAX_ALPHA = 0.85;
 const ADVECT_SCALE = 0.5;
 const SPLASH_RADIUS_PX = 28;
 const SPLASH_FORCE = 0.5;
-const SPLASH_DYE = 1.5;
 const DIFFUSION_ITERATIONS = 3;
 const PROJECT_ITERATIONS = 4;
 const VELOCITY_DAMP = 0.1;
 const DYE_DAMP = 0.1;
 const TRAIL_LIFETIME_MS = 184;
 const TRAIL_RADIUS_PX = 100;
-const TRAIL_MAX_LEN = 240;
 const TRAIL_EASE = 2.5;
 const TRAIL_STRENGTH = 3;
 const TRAIL_FORCE_DECAY = 1.2;
@@ -31,6 +29,13 @@ export function initFluidByteField(canvasId) {
     if (!ctx) return;
 
     const container = canvas.parentElement ?? canvas;
+    const video = document.querySelector('.hero-atmosphere-video');
+    if (video) {
+        video.crossOrigin = 'anonymous';
+    }
+
+    const procCanvas = document.createElement('canvas');
+    const procCtx = procCanvas.getContext('2d', { willReadFrequently: true });
 
     let cols = 0;
     let rows = 0;
@@ -68,6 +73,9 @@ export function initFluidByteField(canvasId) {
         canvas.height = Math.round(height * dpr);
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
+        procCanvas.width = cols;
+        procCanvas.height = rows;
+
         const size = cols * rows;
         velX = new Float32Array(size);
         velY = new Float32Array(size);
@@ -76,7 +84,7 @@ export function initFluidByteField(canvasId) {
         velY0 = new Float32Array(size);
         dye0 = new Float32Array(size);
         glyphs = new Uint8Array(size);
-        for (let i = 0; i < size; i++) glyphs[i] = Math.random() < 0.5 ? 0 : 1;
+        for (let i = 0; i < size; i++) glyphs[i] = Math.floor(Math.random() * 256);
     }
 
     function splash(cellX, cellY, forceX, forceY, dyeAmount, radiusCells) {
@@ -95,8 +103,8 @@ export function initFluidByteField(canvasId) {
                 const idx = x + y * cols;
                 velX[idx] += forceX * falloff;
                 velY[idx] += forceY * falloff;
-                dye[idx] = Math.min(1.2, dye[idx] + dyeAmount * falloff);
-                if (Math.random() < 0.04 * falloff) glyphs[idx] = glyphs[idx] ? 0 : 1;
+                dye[idx] = Math.min(2.0, dye[idx] + dyeAmount * falloff);
+                if (Math.random() < 0.04 * falloff) glyphs[idx] = Math.floor(Math.random() * 256);
             }
         }
     }
@@ -158,7 +166,7 @@ export function initFluidByteField(canvasId) {
             const remaining = 1 - progress;
             const intensity = 0.35 + 0.65 * eased;
             const force = TRAIL_STRENGTH * Math.pow(remaining, TRAIL_FORCE_DECAY);
-            const dyeAmount = 0.12 * Math.pow(remaining, 2);
+            const dyeAmount = 0.2 * Math.pow(remaining, 2);
             const cx = trail.x / CELL_SIZE;
             const cy = trail.y / CELL_SIZE;
             const seed = trail.seed;
@@ -185,7 +193,7 @@ export function initFluidByteField(canvasId) {
                     velX[idx] += dx * invDist * force * forceMul * falloff;
                     velY[idx] += dy * invDist * force * forceMul * falloff;
                     dye[idx] = Math.min(1.5, dye[idx] + dyeAmount * forceMul * falloff);
-                    if (Math.random() < 0.03 * falloff) glyphs[idx] = glyphs[idx] ? 0 : 1;
+                    if (Math.random() < 0.03 * falloff) glyphs[idx] = Math.floor(Math.random() * 256);
                 }
             }
         }
@@ -209,26 +217,62 @@ export function initFluidByteField(canvasId) {
         diffuse(dye, dye0, visc * DT, cols, rows, DT, DIFFUSION_ITERATIONS);
         dye0.set(dye);
         advect(dye, dye0, velX, velY, 1 / (1 + DT * DYE_DAMP), cols, rows, DT);
+
+        const size = cols * rows;
+        for (let i = 0; i < size; i++) {
+            if (Math.random() < 0.0005) {
+                glyphs[i] = Math.floor(Math.random() * 256);
+            }
+        }
     }
 
     function render() {
         ctx.clearRect(0, 0, width, height);
-        ctx.font = `${FONT_SIZE}px ui-monospace, SFMono-Regular, Consolas, monospace`;
+        ctx.font = `700 ${FONT_SIZE}px ui-monospace, SFMono-Regular, Consolas, monospace`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillStyle = '#eef2ff';
+
+        let videoData = null;
+        if (video && video.readyState >= 2) {
+            try {
+                procCtx.drawImage(video, 0, 0, cols, rows);
+                videoData = procCtx.getImageData(0, 0, cols, rows).data;
+            } catch (e) { }
+        }
+
         const half = CELL_SIZE / 2;
         for (let y = 0; y < rows; y++) {
             for (let x = 0; x < cols; x++) {
                 const idx = x + y * cols;
                 const d = dye[idx];
-                if (d <= 0.02) continue;
-                const alpha = d * FADE_RATE;
-                ctx.globalAlpha = alpha < MAX_ALPHA ? alpha : MAX_ALPHA;
-                ctx.fillText(glyphs[idx] ? '1' : '0', x * CELL_SIZE + half, y * CELL_SIZE + half);
+                const hex = glyphs[idx].toString(16).toUpperCase().padStart(2, '0');
+
+                let videoLuminance = 0;
+                if (videoData) {
+                    const r = videoData[idx * 4];
+                    const g = videoData[idx * 4 + 1];
+                    const b = videoData[idx * 4 + 2];
+                    videoLuminance = (r * 0.299 + g * 0.587 + b * 0.114) / 255;
+                }
+
+                const baseAlpha = 0.04 + videoLuminance * 0.22;
+                if (d <= 0.02) {
+                    ctx.shadowBlur = 0;
+                    ctx.globalAlpha = baseAlpha;
+                    ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
+                    ctx.fillText(hex, x * CELL_SIZE + half, y * CELL_SIZE + half);
+                } else {
+                    const alpha = d * FADE_RATE;
+                    const activeAlpha = Math.min(alpha + baseAlpha, MAX_ALPHA);
+                    ctx.globalAlpha = activeAlpha;
+                    ctx.fillStyle = '#ffffff';
+                    ctx.shadowColor = '#ffffff';
+                    ctx.fillText(hex, x * CELL_SIZE + half, y * CELL_SIZE + half);
+                }
             }
         }
         ctx.globalAlpha = 1;
+        ctx.shadowBlur = 0;
     }
 
     function frame(now) {

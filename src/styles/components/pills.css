@@ -20,7 +20,6 @@
 .hero-pill:hover {
     border-color: rgba(255, 255, 255, 0.22);
     background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-1px);
 }
 
 .hero-pill-icon {
@@ -42,10 +41,10 @@
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px) saturate(140%);
     -webkit-backdrop-filter: blur(8px) saturate(140%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: none;
     border-radius: var(--radius-pill);
     padding: 0.5rem 0.5rem 0.5rem 0.9rem;
     font-family: var(--font-body);
@@ -67,7 +66,7 @@
     max-width: 350px;
     overflow: hidden;
     white-space: nowrap;
-    color: var(--color-fg-dim);
+    color: var(--color-fg);
     -webkit-mask-image: linear-gradient(to left, transparent, black 15%);
     mask-image: linear-gradient(to left, transparent, black 15%);
 }
@@ -86,12 +85,11 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    color: var(--color-muted);
+    color: var(--color-fg);
     transition: background var(--duration-fast) ease, color var(--duration-fast) ease;
 }
 
 .discord-copy-bar:hover .discord-copy-icon {
-    color: var(--color-fg);
     background: rgba(255, 255, 255, 0.08);
 }
 
@@ -116,7 +114,7 @@
 }
 
 .hero-tos {
-    color: var(--color-muted);
+    color: var(--color-fg-dim);
     font-size: 0.75rem;
     max-width: 420px;
     margin: 0.875rem auto 0;

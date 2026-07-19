@@ -34,10 +34,21 @@ function initHeroCopyButton() {
     });
 }
 
+function initCtaCopyButton() {
+    const ctaCopyScriptBtn = document.getElementById('cta-copy-script-btn');
+    if (!ctaCopyScriptBtn) return;
+
+    ctaCopyScriptBtn.addEventListener('click', async () => {
+        await copyToClipboard(DISCORD_LOADER_SCRIPT);
+        flashFeedback(ctaCopyScriptBtn, 'Copied!', COPY_FEEDBACK_DURATION_MS);
+    });
+}
+
 export function initHeroSection() {
     initHeroTitle();
     initDiscordCopyBar();
     initHeroCopyButton();
+    initCtaCopyButton();
     if (!isMobileViewport()) {
         initFluidByteField('hero-byte-overlay');
     }

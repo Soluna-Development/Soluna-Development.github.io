@@ -21,8 +21,13 @@
     }
 
     .scripts-grid {
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
         gap: 1rem;
+    }
+
+    .cta-banner {
+        padding: 1.5rem 2rem;
+        height: 70vh;
     }
 }
 

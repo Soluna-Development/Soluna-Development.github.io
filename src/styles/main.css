@@ -27,7 +27,9 @@
 @import 'sections/section-base.css';
 @import 'sections/testimonials.css';
 @import 'sections/executors.css';
+@import 'sections/features.css';
 @import 'sections/showcases.css';
 @import 'sections/faq-section.css';
+@import 'sections/cta-banner.css';
 
 @import 'utilities/responsive.css';

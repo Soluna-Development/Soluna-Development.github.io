@@ -37,10 +37,6 @@
     transition: transform var(--duration-base) var(--ease-standard);
 }
 
-.showcase-card:hover {
-    transform: translateY(-3px);
-}
-
 .showcase-thumb {
     width: 100%;
     height: 100%;

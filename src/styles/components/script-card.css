@@ -60,10 +60,6 @@
     transition: filter var(--duration-base) ease, transform var(--duration-base) ease;
 }
 
-.script-card:hover .script-image img {
-    transform: scale(1.04);
-}
-
 .script-title {
     font-size: clamp(1.0625rem, 2.2vw, 1.3125rem);
     font-weight: 600;
