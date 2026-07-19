@@ -1,0 +1,31 @@
+html {
+    background: var(--color-bg);
+    width: 100%;
+    overflow-x: clip;
+}
+
+body {
+    width: 100%;
+    overflow-x: clip;
+    padding-top: var(--safe-top);
+    padding-bottom: var(--safe-bottom);
+    padding-left: var(--safe-left);
+    padding-right: var(--safe-right);
+}
+
+@supports (-webkit-touch-callout: none) {
+
+    html,
+    body {
+        background-color: var(--color-bg);
+        background-attachment: fixed;
+    }
+}
+
+.viewport-fill {
+    position: fixed;
+    inset: calc(var(--safe-top, 0px) * -1) calc(var(--safe-right, 0px) * -1) calc(var(--safe-bottom, 0px) * -1) calc(var(--safe-left, 0px) * -1);
+    background: var(--color-bg);
+    z-index: -1;
+    pointer-events: none;
+}

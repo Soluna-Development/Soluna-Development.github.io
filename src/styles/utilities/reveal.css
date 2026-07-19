@@ -1,0 +1,48 @@
+.reveal {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translate3d(0, 24px, 0);
+    transition: opacity var(--duration-slow) var(--ease-standard),
+        filter var(--duration-slow) var(--ease-standard),
+        transform var(--duration-slow) var(--ease-standard);
+    will-change: opacity, filter, transform;
+}
+
+.reveal.in-view {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
+}
+
+.reveal-stagger .reveal:nth-child(1) {
+    transition-delay: 0ms;
+}
+
+.reveal-stagger .reveal:nth-child(2) {
+    transition-delay: 80ms;
+}
+
+.reveal-stagger .reveal:nth-child(3) {
+    transition-delay: 160ms;
+}
+
+.reveal-stagger .reveal:nth-child(4) {
+    transition-delay: 240ms;
+}
+
+.reveal-stagger .reveal:nth-child(5) {
+    transition-delay: 320ms;
+}
+
+.reveal-stagger .reveal:nth-child(6) {
+    transition-delay: 400ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        filter: none;
+        transform: none;
+        transition: none;
+    }
+}

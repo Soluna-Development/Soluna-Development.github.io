@@ -3,23 +3,31 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <title>Soluna Script Hub</title>
+    <title>Soluna Development</title>
     <meta name="description"
-        content="Soluna Script Hub — Roblox scripts, game utilities, and tools developed by Soluna Development.">
+        content="Soluna Development — free, keyless Roblox scripts, game utilities, and a multi-game loader developed by Soluna Development.">
+    <meta name="keywords"
+        content="roblox scripts, roblox script hub, soluna, free roblox scripts, roblox loader, script executor">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://soluna-development.github.io/">
 
-    <meta property="og:title" content="Soluna Script Hub">
-    <meta property="og:description" content="Roblox scripts, utilities, and tools developed by Soluna Development.">
+    <meta property="og:title" content="Soluna Development">
+    <meta property="og:description"
+        content="Soluna Development — free, keyless Roblox scripts, game utilities, and a multi-game loader developed by Soluna Development.">
     <meta property="og:image"
         content="https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/assets/static/background-with-logo.png">
     <meta property="og:image:width" content="1080">
     <meta property="og:image:height" content="607">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Soluna Development">
+    <meta property="og:url" content="https://soluna-development.github.io/">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Soluna Script Hub">
-    <meta name="twitter:description" content="Roblox scripts, utilities, and tools developed by Soluna Development.">
+    <meta name="twitter:title" content="Soluna Development">
+    <meta name="twitter:description"
+        content="Soluna Development — free, keyless Roblox scripts, game utilities, and a multi-game loader developed by Soluna Development.">
     <meta name="twitter:image"
         content="https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/assets/static/background-with-logo.png">
 
@@ -29,21 +37,34 @@
 
     <link rel="manifest" href="manifest.json">
 
+    <meta name="theme-color" content="#000000">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Soluna Script Hub">
+    <meta name="apple-mobile-web-app-title" content="Soluna Development">
+    <meta name="mobile-web-app-capable" content="yes">
 
     <link rel="apple-touch-icon"
         href="https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/assets/branding/light-on-black.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="src/index.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Soluna Development",
+        "url": "https://soluna-development.github.io/",
+        "description": "Soluna Development — free, keyless Roblox scripts, game utilities, and a multi-game loader developed by Soluna Development."
+    }
+    </script>
 </head>
 
 <body>
+    <div class="viewport-fill" aria-hidden="true"></div>
+
     <nav class="nav">
         <div class="nav-container">
             <span class="logo">Soluna Development</span>
@@ -69,7 +90,7 @@
         <section class="hero">
             <div class="hero-atmosphere" aria-hidden="true">
                 <video class="hero-atmosphere-video" autoplay loop muted playsinline preload="auto">
-                    <source src="https://www.pexels.com/download/video/38458547/" type="video/mp4">
+                    <source src="https://www.pexels.com/download/video/33850342/" type="video/mp4">
                 </video>
                 <div class="hero-atmosphere-sheen"></div>
                 <canvas id="hero-byte-overlay"></canvas>
@@ -80,7 +101,7 @@
                     <span class="hero-pill-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-shopping-bag mr-2" aria-hidden="true">
+                            aria-hidden="true">
                             <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
                             <path d="M3 6h18"></path>
                             <path d="M16 10a4 4 0 0 1-8 0"></path>
@@ -92,10 +113,11 @@
                     </svg>
                 </a>
 
-                <h1 class="hero-title">...</h1>
+                <h1 class="hero-title">Soluna Development</h1>
+
                 <button class="discord-copy-bar reveal" id="copy-discord-btn" type="button">
-                    <span
-                        class="copy-discord-label">loadstring(game:HttpGet("https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/Loader.lua"))()</span>
+                    <span class="copy-discord-label"
+                        id="copy-discord-label">loadstring(game:HttpGet("https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/Loader.lua"))()</span>
                     <span class="discord-copy-actions">
                         <span class="discord-copy-icon" id="copy-discord-icon">
                             <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
@@ -117,11 +139,12 @@
                         rel="noopener noreferrer">Join Discord</a>
                 </div>
 
-                <p class="hero-tos">Using Soluna means you agree to our <a href="#faq">Terms</a>. We are not liable for
-                    any bans, losses, or issues resulting from third-party script usage — use at your own risk.</p>
+                <p class="hero-tos">Using Soluna means you agree to our <a href="#faq">Terms</a>. We are not liable
+                    for any bans, losses, or issues resulting from third-party script usage — use at your own risk.
+                </p>
 
                 <div class="partners-inline reveal" id="partners-grid-wrap">
-                    <p class="partners-label">Available from verified reseller partners</p>
+                    <p class="partners-label">Available from verified script distributors</p>
                     <div class="partners-grid" id="partners-grid"></div>
                 </div>
             </div>
@@ -144,7 +167,7 @@
 
         <section id="scripts" class="section">
             <div class="container">
-                <h2 class="section-title reveal">Our Scripts</h2>
+                <h2 class="section-eyebrow reveal">Our Scripts</h2>
                 <div class="scripts-wrap">
                     <div class="scripts-grid reveal-stagger" id="scripts-grid"></div>
                 </div>
@@ -155,7 +178,7 @@
             <div class="container executors-container">
                 <div class="executors-heading reveal">
                     <h2 class="section-title-lg">Supporting your favorite executors</h2>
-                    <p class="faq-sub">accessibility done right</p>
+                    <p class="section-subtitle">accessibility done right</p>
                 </div>
             </div>
             <div class="executors-marquee-wrap">
@@ -168,7 +191,7 @@
         <section id="showcases" class="showcases-section">
             <div class="container showcases-heading reveal">
                 <h2 class="section-title-lg">Community showcases.</h2>
-                <p class="faq-sub">See what creators are doing with Soluna, straight from YouTube.</p>
+                <p class="section-subtitle">See what creators are doing with Soluna, straight from YouTube.</p>
             </div>
             <div class="showcase-viewport">
                 <div class="showcase-track" id="showcase-track"></div>
@@ -178,9 +201,9 @@
         <section id="testimonials" class="section testimonials-section">
             <div class="container testimonials-container">
                 <div class="testimonials-heading reveal">
-                    <h2 class="section-title-lg">Here's what people say about <span class="bold">Soluna</span>
+                    <h2 class="section-title-lg">Here's what people say about <span class="bold">Soluna</span></h2>
                 </div>
-                <div class="marquee-wrap">
+                <div class="marquee-wrap marquee-fade-wrap">
                     <div class="marquee-row marquee-left">
                         <div class="marquee-track" id="marquee-track-1"></div>
                     </div>
@@ -188,14 +211,15 @@
                         <div class="marquee-track" id="marquee-track-2"></div>
                     </div>
                 </div>
+            </div>
         </section>
 
         <section id="faq" class="section faq-section">
             <div class="container">
                 <div class="faq-heading reveal">
                     <h2 class="section-title-lg">FAQ</h2>
-                    <p class="faq-sub">Still have questions? <a href="https://discord.gg/e52GujVvbN" target="_blank">Ask
-                            in our Discord</a></p>
+                    <p class="section-subtitle">Still have questions? <a href="https://discord.gg/e52GujVvbN"
+                            target="_blank" rel="noopener noreferrer">Ask in our Discord</a></p>
                 </div>
                 <div class="faq-list reveal-stagger" id="faq-list"></div>
             </div>
@@ -206,21 +230,21 @@
         <div class="container footer-content">
             <div class="footer-brand-block">
                 <img src="https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/assets/branding/light-on-black.png"
-                    alt="" class="footer-logo">
+                    alt="Soluna Development logo" class="footer-logo" loading="lazy">
                 <div class="footer-brand-text">
                     <span class="footer-brand">Soluna Development</span>
                     <span class="footer-tagline">Site made by Soluna Development</span>
                     <span class="footer-sub-tagline">UI design is entirely from: <a href="https://www.mspaint.cc/"
-                            target="_blank">mspaint.cc</a> ❤️</span>
+                            target="_blank" rel="noopener noreferrer">mspaint.cc</a> ❤️</span>
                 </div>
             </div>
-            <span class="footer-disclaimer">This software is not affiliated, associated, authorized, endorsed by, or in
-                any way officially connected with Roblox or Microsoft or any of its subsidiaries or its
+            <span class="footer-disclaimer">This software is not affiliated, associated, authorized, endorsed by, or
+                in any way officially connected with Roblox or Microsoft or any of its subsidiaries or its
                 affiliates.</span>
         </div>
     </footer>
 
-    <script src="src/index.js"></script>
+    <script type="module" src="src/scripts/main.js"></script>
 </body>
 
 </html>

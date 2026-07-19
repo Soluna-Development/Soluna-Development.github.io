@@ -1,0 +1,77 @@
+.marquee-fade-wrap {
+    position: relative;
+}
+
+.marquee-fade-wrap::before,
+.marquee-fade-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: clamp(3rem, 12vw, 10rem);
+    z-index: var(--z-marquee-fade);
+    pointer-events: none;
+}
+
+.marquee-fade-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg), transparent);
+}
+
+.marquee-fade-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg), transparent);
+}
+
+.marquee-row {
+    overflow: hidden;
+    width: 100%;
+    transform: translateZ(0);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+.marquee-left .marquee-track {
+    animation: marquee-scroll-left 60s linear infinite;
+}
+
+.marquee-right .marquee-track {
+    animation: marquee-scroll-right 60s linear infinite;
+}
+
+@keyframes marquee-scroll-left {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@keyframes marquee-scroll-right {
+    from {
+        transform: translate3d(-50%, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .marquee-track,
+    .executors-marquee-track,
+    .showcase-track {
+        animation: none !important;
+        transform: none !important;
+    }
+}

@@ -1,0 +1,43 @@
+.bold {
+    font-weight: 700;
+    color: var(--color-fg) !important;
+}
+
+.bold-black {
+    font-weight: 900;
+    color: var(--color-bg) !important;
+}
+
+.text-balance {
+    text-wrap: balance;
+}
+
+.section-eyebrow {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-muted);
+}
+
+.section-title-lg {
+    font-size: clamp(1.5rem, 3vw, 1.85rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: var(--color-fg-dim);
+}
+
+.section-subtitle {
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+}
+
+.section-subtitle a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: var(--color-fg);
+    transition: color var(--duration-fast) ease;
+}
+
+.section-subtitle a:hover {
+    color: var(--color-fg-dim);
+}

@@ -1,6 +1,6 @@
 [
     {
-        "name": "Test",
+        "name": "RScripts",
         "logo": "assets/images/partners/rscripts.png",
         "link": "https://rscripts.net"
     },
@@ -8,5 +8,10 @@
         "name": "ScriptBlox",
         "logo": "assets/images/partners/scriptblox.png",
         "link": "https://scriptblox.com/"
+    },
+    {
+        "name": "XenoScripts",
+        "logo": "assets/images/partners/xenoscripts.png",
+        "link": "https://xenoscripts.com/"
     }
 ]

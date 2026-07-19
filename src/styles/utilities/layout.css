@@ -1,0 +1,27 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: var(--content-padding-inline);
+}
+
+.dot-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90vw;
+    height: 55vh;
+    fill: rgba(255, 255, 255, 0.14);
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(to bottom right, white, transparent 65%);
+    mask-image: linear-gradient(to bottom right, white, transparent 65%);
+    z-index: var(--z-dot-grid);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
