@@ -27,7 +27,6 @@ export async function initExecutorsSection() {
         populateLoopedTrack(track, executors, createExecutorItem, EXECUTOR_ITEM_WIDTH_PX);
         createMarqueeLoop(track, '--marquee-x', { baseSpeed: BASE_SPEED, boostedSpeed: BOOSTED_SPEED });
     } catch (error) {
-        console.error('[Executors Section] Error loading executors:', error);
         const wrap = document.querySelector('.executors-marquee-wrap');
         if (wrap) {
             wrap.innerHTML = '<p style="color: var(--color-muted); text-align:center; width:100%">executors unavailable.</p>';

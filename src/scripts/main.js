@@ -22,13 +22,10 @@ function initApp() {
     initFaqSection();
 
     window.debugExecutors = async () => {
-        console.log('[DEBUG] Manually refetching executors...');
         try {
             const executors = await getExecutors();
-            console.log('[DEBUG] Success! Executors:', executors);
             return executors;
         } catch (error) {
-            console.error('[DEBUG] Failed:', error);
             throw error;
         }
     };
