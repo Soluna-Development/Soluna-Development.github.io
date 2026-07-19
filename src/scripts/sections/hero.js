@@ -19,7 +19,6 @@ function initDiscordCopyBar() {
 
     copyBtn.addEventListener('click', async () => {
         await copyToClipboard(DISCORD_LOADER_SCRIPT);
-        if (copyLabel) flashFeedback(copyLabel, 'Copied!', COPY_FEEDBACK_DURATION_MS);
         if (copyIcon) flashClass(copyIcon, 'copied', COPY_FEEDBACK_DURATION_MS);
     });
 }
@@ -51,5 +50,6 @@ export function initHeroSection() {
     initCtaCopyButton();
     if (!isMobileViewport()) {
         initFluidByteField('hero-byte-overlay');
+        initFluidByteField('cta-byte-overlay');
     }
 }

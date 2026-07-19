@@ -60,6 +60,18 @@
         "description": "Free, keyless Roblox scripts, utilities, and a multi-game loader developed by Soluna Development."
     }
     </script>
+
+
+    <script>
+        const params = new URLSearchParams(location.search);
+
+        if (params.has("debug")) {
+            const s = document.createElement("script");
+            s.src = "https://cdn.jsdelivr.net/npm/eruda";
+            s.onload = () => eruda.init();
+            document.head.appendChild(s);
+        }
+    </script>
 </head>
 
 <body>
@@ -119,10 +131,23 @@
                         id="copy-discord-label">loadstring(game:HttpGet("https://raw.githubusercontent.com/Soluna-Development/API/refs/heads/main/src/Loader.lua"))()</span>
                     <span class="discord-copy-actions">
                         <span class="discord-copy-icon" id="copy-discord-icon">
-                            <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            <svg class="copy-icon" width="20px" height="20px" viewBox="0 -0.5 25 25" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" stroke="#000000">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M8.94605 4.99995L13.2541 4.99995C14.173 5.00498 15.0524 5.37487 15.6986 6.02825C16.3449 6.68163 16.7051 7.56497 16.7001 8.48395V12.716C16.7051 13.6349 16.3449 14.5183 15.6986 15.1717C15.0524 15.825 14.173 16.1949 13.2541 16.2H8.94605C8.02707 16.1949 7.14773 15.825 6.50148 15.1717C5.85522 14.5183 5.495 13.6349 5.50005 12.716L5.50005 8.48495C5.49473 7.5658 5.85484 6.6822 6.50112 6.0286C7.1474 5.375 8.0269 5.00498 8.94605 4.99995Z"
+                                        stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path d="M10.1671 19H14.9371C17.4857 18.9709 19.5284 16.8816 19.5001 14.333V9.666"
+                                        stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </g>
+                            </svg>
+                            <svg class="check-icon" width="20px" height="20px" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2">
-                                <rect x="9" y="9" width="13" height="13" rx="2" />
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                <path d="M20 6 9 17l-5-5" />
                             </svg>
                             <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2">
@@ -134,8 +159,8 @@
 
                 <div class="hero-cta-row reveal">
                     <button class="hero-cta hero-cta-dark" id="hero-copy-script-btn" type="button">Copy Script</button>
-                    <a class="hero-cta hero-cta-light" href="/discord" target="_blank"
-                        rel="noopener noreferrer">Join Discord</a>
+                    <a class="hero-cta hero-cta-light" href="/discord" target="_blank" rel="noopener noreferrer">Join
+                        Discord</a>
                 </div>
 
                 <p class="hero-tos">Using Soluna means you agree to that we're not liable for any bans, losses, or
@@ -315,8 +340,8 @@
             <div class="container">
                 <div class="faq-heading reveal">
                     <h2 class="section-title-lg">FAQ</h2>
-                    <p class="section-subtitle">Still have questions? <a href="/discord"
-                            target="_blank" rel="noopener noreferrer">Ask in our Discord</a></p>
+                    <p class="section-subtitle">Still have questions? <a href="/discord" target="_blank"
+                            rel="noopener noreferrer">Ask in our Discord</a></p>
                 </div>
                 <div class="faq-list reveal-stagger" id="faq-list"></div>
             </div>
@@ -325,8 +350,9 @@
 
     <section class="cta-banner">
         <div class="cta-banner-media" aria-hidden="true">
-            <video class="cta-banner-video" src="https://cdn.openai.com/ctf-cdn/floral_a.mp4" autoplay loop muted
-                playsinline></video>
+            <video class="cta-banner-video hero-atmosphere-video" src="https://cdn.openai.com/ctf-cdn/floral_a.mp4"
+                autoplay loop muted playsinline></video>
+            <canvas id="cta-byte-overlay"></canvas>
             <div class="cta-banner-overlay"></div>
         </div>
         <div class="container cta-banner-content reveal">
@@ -352,7 +378,8 @@
             </div>
             <div class="footer-section">
                 <h4>Our Github</h4>
-                <p><a href="https://github.com/Soluna-Development" target="_blank" rel="noopener">Soluna Development</a></p>
+                <p><a href="https://github.com/Soluna-Development" target="_blank" rel="noopener">Soluna Development</a>
+                </p>
             </div>
         </div>
         <div class="footer-bottom">

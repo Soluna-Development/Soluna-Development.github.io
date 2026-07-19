@@ -71,13 +71,36 @@
     gap: 0.75rem;
 }
 
-.script-title svg {
-    flex-shrink: 0;
-    color: var(--color-muted);
-    transition: transform var(--duration-fast) var(--ease-out-soft), color var(--duration-fast) ease;
+.script-copy-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.script-card:hover .script-title svg {
+.script-copy-icon svg {
+    flex-shrink: 0;
+    color: var(--color-muted);
+    transition: transform var(--duration-fast) var(--ease-out-soft), color var(--duration-fast) ease, opacity 0.15s ease;
+}
+
+.script-copy-icon .check-icon {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.script-copy-icon.copied .copy-icon {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.script-copy-icon.copied .check-icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.script-card:hover .script-copy-icon svg {
     transform: translateX(3px);
     color: var(--color-fg);
 }

@@ -51,11 +51,12 @@
 .footer-bottom {
     text-align: center;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    color: var(--color-muted);
 }
 
 .footer-bottom p {
     color: var(--color-muted);
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-weight: 400
 }

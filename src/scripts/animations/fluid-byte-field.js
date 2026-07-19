@@ -29,7 +29,7 @@ export function initFluidByteField(canvasId) {
     if (!ctx) return;
 
     const container = canvas.parentElement ?? canvas;
-    const video = document.querySelector('.hero-atmosphere-video');
+    const video = container.querySelector('.hero-atmosphere-video');
     if (video) {
         video.crossOrigin = 'anonymous';
     }
