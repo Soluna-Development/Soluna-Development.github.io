@@ -17,9 +17,7 @@ function dedupeByName(executors) {
 
 export async function getExecutors() {
     console.log('[Executors] Fetching from:', WEAO_EXECUTORS_ENDPOINT);
-    const response = await fetch(WEAO_EXECUTORS_ENDPOINT, {
-        headers: { 'User-Agent': 'WEAO-3PService' },
-    });
+    const response = await fetch(WEAO_EXECUTORS_ENDPOINT);
     console.log('[Executors] Response status:', response.status, response.statusText);
     if (!response.ok) {
         const errorText = await response.text();
