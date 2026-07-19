@@ -2,7 +2,6 @@
 
 @import 'base/tokens.css';
 @import 'base/reset.css';
-@import 'base/safe-area.css';
 @import 'base/typography.css';
 
 @import 'utilities/layout.css';
