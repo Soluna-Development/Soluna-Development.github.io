@@ -1,11 +1,14 @@
 {
     "name": "Soluna Development",
     "short_name": "Soluna",
-    "description": "Soluna Development — free, keyless Roblox scripts, utilities, and tools developed by Soluna Development.",
+    "description": "Soluna Development - free, keyless Roblox scripts, utilities, and tools developed by Soluna Development.",
     "start_url": "/",
     "scope": "/",
     "display": "standalone",
-    "display_override": ["window-controls-overlay", "standalone"],
+    "display_override": [
+        "window-controls-overlay",
+        "standalone"
+    ],
     "background_color": "transparent",
     "theme_color": "transparent",
     "orientation": "any",

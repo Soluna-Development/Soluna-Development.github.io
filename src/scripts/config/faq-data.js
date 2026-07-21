@@ -5,7 +5,7 @@ export const FAQ_ITEMS = [
     },
     {
         q: 'Where can I report bugs and suggest features?',
-        a: 'Head over to our Discord server — there is a dedicated support server, there you can create a ticket.',
+        a: 'Head over to our Discord server - there is a dedicated support server, there you can create a ticket.',
     },
     {
         q: 'Does this work on mobile?',
@@ -17,7 +17,7 @@ export const FAQ_ITEMS = [
     },
     {
         q: 'What games are supported?',
-        a: 'Check the Our Scripts section above — each card lists the games that script currently supports.',
+        a: 'Check the Our Scripts section above - each card lists the games that script currently supports.',
     },
     {
         q: 'How do I review the script?',

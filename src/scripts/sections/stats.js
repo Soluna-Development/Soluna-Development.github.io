@@ -29,8 +29,8 @@ async function initDiscordStats() {
             observer.observe(statsGrid);
         }
     } catch (error) {
-        membersEl.textContent = '—';
-        onlineEl.textContent = '—';
+        membersEl.textContent = '-';
+        onlineEl.textContent = '-';
     }
 }
 
@@ -42,7 +42,7 @@ async function initScriptCountStat() {
         const scripts = await getScripts();
         animateCountOnVisible(scriptsEl, scripts.length);
     } catch (error) {
-        scriptsEl.textContent = '—';
+        scriptsEl.textContent = '-';
     }
 }
 

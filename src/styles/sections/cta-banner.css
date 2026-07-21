@@ -15,10 +15,18 @@
     z-index: -1;
     overflow: hidden;
     pointer-events: none;
-    -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.7) 40%, black 100%);
+    -webkit-mask-image: linear-gradient(to top,
+            transparent 0%,
+            rgba(0, 0, 0, 0.1) 20%,
+            rgba(0, 0, 0, 0.5) 45%,
+            black 75%);
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 100% 100%;
-    mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.7) 40%, black 100%);
+    mask-image: linear-gradient(to top,
+            transparent 0%,
+            rgba(0, 0, 0, 0.1) 20%,
+            rgba(0, 0, 0, 0.5) 45%,
+            black 75%);
     mask-repeat: no-repeat;
     mask-size: 100% 100%;
 }

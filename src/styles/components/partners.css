@@ -21,7 +21,7 @@
     justify-content: center;
     gap: clamp(1.5rem, 4vw, 2.75rem);
     width: 100%;
-    max-width: 640px;
+    max-width: 800px;
 }
 
 .partner-item {
@@ -30,11 +30,12 @@
 }
 
 .partner-item img {
-    height: clamp(16px, 2.2vw, 22px);
+    height: 20px;
     width: auto;
     object-fit: contain;
     filter: brightness(0) invert(1);
     opacity: 0.85;
+    margin-top: 12px;
     transition: opacity var(--duration-fast) ease;
 }
 

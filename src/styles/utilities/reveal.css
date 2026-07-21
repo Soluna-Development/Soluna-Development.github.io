@@ -38,6 +38,10 @@
     transition-delay: 400ms;
 }
 
+.reveal-stagger .reveal:nth-child(7) {
+    transition-delay: 480ms;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .reveal {
         opacity: 1;

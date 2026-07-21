@@ -16,12 +16,18 @@ function dedupeByName(executors) {
 }
 
 export async function getExecutors() {
-    const response = await fetch(WEAO_EXECUTORS_ENDPOINT);
+    const response = await fetch(WEAO_EXECUTORS_ENDPOINT, {
+        headers: {
+            'User-Agent': 'WEAO-3PService'
+        }
+    });
+
     if (!response.ok) {
-        const errorText = await response.text();
         throw new Error(`Failed to fetch executor status: ${response.status} ${response.statusText}`);
     }
+
     const data = await response.json();
+
     if (!Array.isArray(data) || data.length === 0) {
         throw new Error('Empty executor response');
     }
