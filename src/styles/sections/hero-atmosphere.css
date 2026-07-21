@@ -104,5 +104,6 @@
     .hero {
         height: auto;
         min-height: 100svh;
+        padding-top: 5rem;
     }
 }

@@ -32,8 +32,6 @@
 }
 
 .section-subtitle a {
-    text-decoration: underline;
-    text-underline-offset: 3px;
     color: var(--color-fg);
     transition: color var(--duration-fast) ease;
 }

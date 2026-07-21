@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40vh;
+    height: 50vh;
 }
 
 .cta-banner-media {
@@ -15,18 +15,16 @@
     z-index: -1;
     overflow: hidden;
     pointer-events: none;
-    -webkit-mask-image: linear-gradient(to top,
-            transparent 0%,
-            rgba(0, 0, 0, 0.1) 20%,
-            rgba(0, 0, 0, 0.5) 45%,
-            black 75%);
+    -webkit-mask-image:
+        linear-gradient(to bottom, transparent, black 50%),
+        linear-gradient(to top, transparent, black 70%);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 100% 100%;
-    mask-image: linear-gradient(to top,
-            transparent 0%,
-            rgba(0, 0, 0, 0.1) 20%,
-            rgba(0, 0, 0, 0.5) 45%,
-            black 75%);
+    mask-image:
+        linear-gradient(to bottom, transparent, black 50%),
+        linear-gradient(to top, transparent, black 65%);
     mask-repeat: no-repeat;
     mask-size: 100% 100%;
 }
@@ -76,6 +74,6 @@
 
 .cta-banner-subtitle {
     font-size: 0.9375rem;
-    color: var(--color-muted);
+    color: var(--color-fg-dim);
     margin-bottom: 0.5rem;
 }

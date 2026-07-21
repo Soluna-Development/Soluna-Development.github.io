@@ -12,15 +12,12 @@
     isolation: isolate;
     cursor: pointer;
     border-radius: var(--radius-lg);
-    transition: transform var(--duration-base) var(--ease-standard);
+    transform: translateZ(0) scale(1);
+    transition: transform 220ms cubic-bezier(.2, .8, .2, 1);
 }
 
 .script-card:hover {
-    transform: translateY(-4px);
-}
-
-.script-card:active {
-    transform: translateY(-2px) scale(0.99);
+    transform: translateZ(0) scale(.92);
 }
 
 .script-glow {
@@ -41,7 +38,7 @@
 
 .script-image {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
     background: var(--color-border);
     overflow: hidden;
     margin-bottom: 1.25rem;
@@ -87,21 +84,17 @@
 .script-copy-icon .check-icon {
     position: absolute;
     opacity: 0;
-    transform: scale(0.5);
 }
 
 .script-copy-icon.copied .copy-icon {
     opacity: 0;
-    transform: scale(0.5);
 }
 
 .script-copy-icon.copied .check-icon {
     opacity: 1;
-    transform: scale(1);
 }
 
 .script-card:hover .script-copy-icon svg {
-    transform: translateX(3px);
     color: var(--color-fg);
 }
 
@@ -157,7 +150,7 @@
 
     .script-card {
         flex: 0 0 auto;
-        width: min(78vw, 300px);
+        width: calc(min(78vw, 300px) * 1.2);
         scroll-snap-align: start;
     }
 

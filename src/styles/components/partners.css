@@ -3,13 +3,13 @@
     flex-direction: column;
     align-items: center;
     gap: 0.85rem;
-    margin-top: clamp(1.5rem, 4vw, 2.5rem);
+    padding-top: 120px;
 }
 
 .partners-label {
     font-size: 0.8rem;
     font-weight: 500;
-    color: var(--color-fg);
+    color: var(--color-fg-dim);
     opacity: 0.75;
     letter-spacing: 0.01em;
 }

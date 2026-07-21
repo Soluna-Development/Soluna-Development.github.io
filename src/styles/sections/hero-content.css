@@ -5,16 +5,29 @@
     text-align: center;
     justify-content: center;
     width: 100%;
+    padding-top: 50px;
+}
+
+.logo-image {
+    width: 100px;
+    height: 100px;
+}
+
+.logo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .hero-title {
-    font-size: clamp(2.75rem, 8vw, 5rem);
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: 0.08em;
-    margin-bottom: 0.75rem;
+    font-size: clamp(2rem, calc(2rem + 2 * ((100vw - 23.4375rem) / 66.5625)), 4rem);
+    line-height: clamp(2.28rem, calc(2.28rem + 1.72 * ((100vw - 23.4375rem) / 66.5625)), 4rem);
+    letter-spacing: -.03em;
+    font-weight: 500;
+    text-wrap: balance;
     color: var(--color-fg);
-    text-transform: uppercase;
+    margin-bottom: 1rem;
+    min-width: 440px;
 }
 
 .hero-title .char {
@@ -22,6 +35,20 @@
     opacity: 0;
     filter: blur(10px);
     animation: char-in 0.4s ease forwards;
+}
+
+.hero-description {
+    color: var(--color-fg-dim);
+    font-size: 0.8rem;
+    margin: 1rem auto 0;
+    line-height: 1.5;
+    width: 80%;
+}
+
+.hero-description a {
+    color: var(--color-fg-dim);
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 @keyframes char-in {
@@ -39,16 +66,19 @@
     }
 }
 
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 3rem;
-        margin-bottom: 1.75rem;
+@media (max-width: 768px) {
+    .hero-description {
+        margin-top: 0rem;
     }
 }
 
 @media (orientation: landscape) and (max-height: 600px) {
     .hero-title {
-        font-size: clamp(2.5rem, 8vh, 6rem);
-        margin-bottom: 0.5rem;
+        margin-bottom: 0rem;
+        font-size: 2.7rem;
+    }
+
+    .hero-container {
+        padding-top: 0px;
     }
 }
