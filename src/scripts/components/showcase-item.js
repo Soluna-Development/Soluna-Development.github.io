@@ -5,7 +5,7 @@ export function createShowcaseItem(video) {
     const item = createElement('div', 'showcase-item');
     item.innerHTML = `
         <button class="showcase-card" type="button" aria-label="Play video">
-            <img class="showcase-thumb" src="${youtubeThumbnailUrl(video.id)}" alt="" loading="lazy">
+            <img class="showcase-thumb" src="${youtubeThumbnailUrl(video.id)}" alt="">
         </button>
     `;
 

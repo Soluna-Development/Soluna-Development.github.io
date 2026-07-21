@@ -9,7 +9,7 @@ const BOOSTED_SPEED = 2.2;
 function createExecutorItem(executor) {
     const el = createElement('div', 'executor-item');
     const avatar = executor.image
-        ? `<img src="${executor.image}" alt="" loading="lazy" onerror="this.parentElement.innerHTML=''">`
+        ? `<img src="${executor.image}" alt="" " onerror="this.parentElement.innerHTML=''">`
         : '';
     el.innerHTML = `
         <span class="executor-avatar">${avatar}</span>

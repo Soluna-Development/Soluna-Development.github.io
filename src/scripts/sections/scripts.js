@@ -1,6 +1,5 @@
 import { getScripts } from '../services/scripts-service.js';
 import { createScriptCard } from '../components/script-card.js';
-import { observeReveals } from '../animations/reveal-observer.js';
 import { debounce, isMobileViewport } from '../utils/dom.js';
 
 let snapObserver = null;
@@ -30,10 +29,8 @@ export async function initScriptsSection() {
         grid.innerHTML = '';
         scripts.forEach((script) => {
             const card = createScriptCard(script);
-            card.classList.add('reveal');
             grid.appendChild(card);
         });
-        observeReveals(grid);
         setupSnapGlow(grid);
 
         window.addEventListener('resize', debounce(() => setupSnapGlow(grid), 200));

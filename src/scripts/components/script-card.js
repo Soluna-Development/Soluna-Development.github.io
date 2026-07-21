@@ -31,7 +31,7 @@ export function createScriptCard(script) {
     let html = `
         <div class="script-glow"></div>
         <div class="script-image">
-            <img src="${script.image}" alt="${script.title}" crossorigin="anonymous" loading="lazy">
+            <img src="${script.image}" alt="${script.title}" crossorigin="anonymous">
         </div>
         <h3 class="script-title">
             ${script.title}

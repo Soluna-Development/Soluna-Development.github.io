@@ -154,6 +154,10 @@
         scroll-snap-align: start;
     }
 
+    .script-card:hover {
+        transform: translateZ(0) scale(1);
+    }
+
     .script-card.glow-ready.in-snap .script-glow {
         opacity: 0.6 !important;
     }

@@ -5,8 +5,8 @@ import { observeReveals } from '../animations/reveal-observer.js';
 function createPartnerItem(partner) {
     const item = createElement('div', 'partner-item reveal');
     const inner = partner.link
-        ? `<a href="${partner.link}" target="_blank" rel="noopener noreferrer"><img src="${partner.logo}" alt="${partner.name}" loading="lazy"></a>`
-        : `<img src="${partner.logo}" alt="${partner.name}" loading="lazy">`;
+        ? `<a href="${partner.link}" target="_blank" rel="noopener noreferrer"><img src="${partner.logo}" alt="${partner.name}" "></a>`
+        : `<img src="${partner.logo}" alt="${partner.name}" ">`;
     item.innerHTML = inner;
     return item;
 }
