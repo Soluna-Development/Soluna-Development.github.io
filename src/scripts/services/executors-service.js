@@ -1,5 +1,3 @@
-I'm having issues with CORS!
-
 import { WEAO_EXECUTORS_ENDPOINT } from '../config/constants.js';
 
 function faviconFromUrl(websiteUrl) {
