@@ -1,4 +1,14 @@
-import { WEAO_EXECUTORS_ENDPOINT } from '../config/constants.js';
+import { DATA_PATHS, WEAO_EXECUTORS_ENDPOINT } from '../config/constants.js';
+
+function getExecutorsEndpoint() {
+    if (window.location.protocol === 'https:') {
+        const endpoint = new URL(DATA_PATHS.executors, document.baseURI);
+        endpoint.searchParams.set('v', Date.now().toString());
+        return endpoint;
+    }
+
+    return WEAO_EXECUTORS_ENDPOINT;
+}
 
 function faviconFromUrl(websiteUrl) {
     try {
@@ -17,9 +27,7 @@ function dedupeByName(executors) {
 }
 
 export async function getExecutors() {
-    const endpoint = WEAO_EXECUTORS_ENDPOINT.includes('/api/status/exploits')
-        ? WEAO_EXECUTORS_ENDPOINT
-        : `${WEAO_EXECUTORS_ENDPOINT.replace(/\/$/, '')}/api/status/exploits`;
+    const endpoint = getExecutorsEndpoint();
 
     const response = await fetch(endpoint);
 
