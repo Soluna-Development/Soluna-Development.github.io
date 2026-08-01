@@ -1,35 +1,28 @@
-import { DATA_PATHS, WEAO_EXECUTORS_ENDPOINT } from '../config/constants.js';
+I'm having issues with CORS!
 
-function getExecutorsEndpoint() {
-    if (window.location.protocol === 'https:') {
-        const endpoint = new URL(DATA_PATHS.executors, document.baseURI);
-        endpoint.searchParams.set('v', Date.now().toString());
-        return endpoint;
-    }
-
-    return WEAO_EXECUTORS_ENDPOINT;
-}
+import { WEAO_EXECUTORS_ENDPOINT } from '../config/constants.js';
 
 function faviconFromUrl(websiteUrl) {
     try {
         const host = new URL(websiteUrl).hostname;
         return `https://favicone.com/${host}?s=64`;
-    } catch {
+    } catch (error) {
         return '';
     }
 }
 
 function dedupeByName(executors) {
     return executors.filter(
-        (executor, index, all) =>
-            all.findIndex((e) => e.name === executor.name) === index
+        (executor, index, all) => all.findIndex((e) => e.name === executor.name) === index
     );
 }
 
 export async function getExecutors() {
-    const endpoint = getExecutorsEndpoint();
-
-    const response = await fetch(endpoint);
+    const response = await fetch(WEAO_EXECUTORS_ENDPOINT, {
+        headers: {
+            'User-Agent': 'WEAO-3PService'
+        }
+    });
 
     if (!response.ok) {
         throw new Error(`Failed to fetch executor status: ${response.status} ${response.statusText}`);
@@ -45,7 +38,7 @@ export async function getExecutors() {
         .filter((entry) => !entry.hidden && entry.extype !== 'wexternal')
         .map((entry) => ({
             name: entry.title,
-            image: entry.websitelink ? faviconFromUrl(entry.websitelink) : ''
+            image: entry.websitelink ? faviconFromUrl(entry.websitelink) : '',
         }));
 
     return dedupeByName(executors);
