@@ -4,23 +4,24 @@ function faviconFromUrl(websiteUrl) {
     try {
         const host = new URL(websiteUrl).hostname;
         return `https://favicone.com/${host}?s=64`;
-    } catch (error) {
+    } catch {
         return '';
     }
 }
 
 function dedupeByName(executors) {
     return executors.filter(
-        (executor, index, all) => all.findIndex((e) => e.name === executor.name) === index
+        (executor, index, all) =>
+            all.findIndex((e) => e.name === executor.name) === index
     );
 }
 
 export async function getExecutors() {
-    const response = await fetch(WEAO_EXECUTORS_ENDPOINT, {
-        headers: {
-            'User-Agent': 'WEAO-3PService'
-        }
-    });
+    const endpoint = WEAO_EXECUTORS_ENDPOINT.includes('/api/status/exploits')
+        ? WEAO_EXECUTORS_ENDPOINT
+        : `${WEAO_EXECUTORS_ENDPOINT.replace(/\/$/, '')}/api/status/exploits`;
+
+    const response = await fetch(endpoint);
 
     if (!response.ok) {
         throw new Error(`Failed to fetch executor status: ${response.status} ${response.statusText}`);
@@ -36,7 +37,7 @@ export async function getExecutors() {
         .filter((entry) => !entry.hidden && entry.extype !== 'wexternal')
         .map((entry) => ({
             name: entry.title,
-            image: entry.websitelink ? faviconFromUrl(entry.websitelink) : '',
+            image: entry.websitelink ? faviconFromUrl(entry.websitelink) : ''
         }));
 
     return dedupeByName(executors);
