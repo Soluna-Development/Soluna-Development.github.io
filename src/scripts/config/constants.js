@@ -10,7 +10,7 @@ export const DATA_PATHS = {
 };
 
 export const DISCORD_INVITE_API = `https://discord.com/api/v10/invites/${DISCORD_INVITE_CODE}?with_counts=true`;
-export const WEAO_EXECUTORS_ENDPOINT = 'https://weao.xyz/api/status/exploits';
+export const WEAO_EXECUTORS_ENDPOINT = 'http://farts.fadedis.xyz:25551';
 
 export const COPY_FEEDBACK_DURATION_MS = 1800;
 export const REVEAL_THRESHOLD = 0.15;
