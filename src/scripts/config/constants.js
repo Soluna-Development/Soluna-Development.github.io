@@ -7,11 +7,10 @@ export const DATA_PATHS = {
     partners: 'src/data/partners.json',
     reviews: 'src/data/reviews.json',
     showcases: 'src/data/showcases.json',
-    executors: 'src/data/executors.json',
 };
 
 export const DISCORD_INVITE_API = `https://discord.com/api/v10/invites/${DISCORD_INVITE_CODE}?with_counts=true`;
-export const WEAO_EXECUTORS_ENDPOINT = 'https://weao.xyz';
+export const WEAO_EXECUTORS_ENDPOINT = 'https://weao.xyz/api/status/exploits';
 
 export const COPY_FEEDBACK_DURATION_MS = 1800;
 export const REVEAL_THRESHOLD = 0.15;
