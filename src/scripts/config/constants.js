@@ -7,6 +7,7 @@ export const DATA_PATHS = {
     partners: 'src/data/partners.json',
     reviews: 'src/data/reviews.json',
     showcases: 'src/data/showcases.json',
+    executors: 'src/data/executors.json',
 };
 
 export const DISCORD_INVITE_API = `https://discord.com/api/v10/invites/${DISCORD_INVITE_CODE}?with_counts=true`;
